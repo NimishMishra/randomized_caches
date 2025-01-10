@@ -1,0 +1,28 @@
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Dec 20 2024 16:10:06
+gem5 started Jan  1 2025 09:18:26
+gem5 executing on computenode3, pid 4007490
+command line: /home/nimish/mirage/perf_analysis/gem5/build/X86/gem5.opt --outdir ./stats/stat_759 /home/nimish/mirage/perf_analysis/gem5/configs/example/spec06_config_multiprogram.py --benchmark=specrand_i --num-cpus=1 --mem-size=8GB --mem-type=DDR4_2400_8x8 --cpu-type TimingSimpleCPU --caches --l2cache --l1d_size=512B --l1i_size=32kB --l2_size=16MB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=16 --mirage_mode=scatter-cache --l2_numSkews=2 --l2_TDR=1.75 --l2_EncrLat=3 --prog-interval=300Hz
+
+Workload-0: 
+['/home/nimish/mirage/AES_TBOX/C/build/AES-TBOX']
+Global frequency set at 1000000000000 ticks per second
+CWD: /home/nimish/mirage
+      0: system.l2.tags.indexing_policy: Size of Tag-Store for Skewed-Assoc-Randomized - Sets:16384, with Assoc:16 
+**** REAL SIMULATION ****
+3333333333: Event_86: system.cpu progress event, total committed:3146612, progress insts committed: 3146612, IPC: 0.314347
+6666666666: Event_86: system.cpu progress event, total committed:5859281, progress insts committed: 2712669, IPC: 0.270996
+9999999999: Event_86: system.cpu progress event, total committed:8571908, progress insts committed: 2712627, IPC: 0.270991
+13333333332: Event_86: system.cpu progress event, total committed:11284541, progress insts committed: 2712633, IPC: 0.270992
+16666666665: Event_86: system.cpu progress event, total committed:13997188, progress insts committed: 2712647, IPC: 0.270993
+19999999998: Event_86: system.cpu progress event, total committed:16709876, progress insts committed: 2712688, IPC: 0.270998
+23333333331: Event_86: system.cpu progress event, total committed:19422524, progress insts committed: 2712648, IPC: 0.270994
+26666666664: Event_86: system.cpu progress event, total committed:22135076, progress insts committed: 2712552, IPC: 0.270984
+29999999997: Event_86: system.cpu progress event, total committed:24847569, progress insts committed: 2712493, IPC: 0.270978
+33333333330: Event_86: system.cpu progress event, total committed:27560200, progress insts committed: 2712631, IPC: 0.270992
+36666666663: Event_86: system.cpu progress event, total committed:30272827, progress insts committed: 2712627, IPC: 0.270991
+39999999996: Event_86: system.cpu progress event, total committed:32985476, progress insts committed: 2712649, IPC: 0.270994
+43333333329: Event_86: system.cpu progress event, total committed:35698164, progress insts committed: 2712688, IPC: 0.270998
+46666666662: Event_86: system.cpu progress event, total committed:38410822, progress insts committed: 2712658, IPC: 0.270995

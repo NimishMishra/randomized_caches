@@ -1,0 +1,49 @@
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Dec 20 2024 16:10:06
+gem5 started Jan  1 2025 09:17:11
+gem5 executing on computenode3, pid 4007474
+command line: /home/nimish/mirage/perf_analysis/gem5/build/X86/gem5.opt --outdir ./stats/stat_753 /home/nimish/mirage/perf_analysis/gem5/configs/example/spec06_config_multiprogram.py --benchmark=specrand_i --num-cpus=1 --mem-size=8GB --mem-type=DDR4_2400_8x8 --cpu-type TimingSimpleCPU --caches --l2cache --l1d_size=512B --l1i_size=32kB --l2_size=16MB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=16 --mirage_mode=scatter-cache --l2_numSkews=2 --l2_TDR=1.75 --l2_EncrLat=3 --prog-interval=300Hz
+
+Workload-0: 
+['/home/nimish/mirage/AES_TBOX/C/build/AES-TBOX']
+Global frequency set at 1000000000000 ticks per second
+CWD: /home/nimish/mirage
+      0: system.l2.tags.indexing_policy: Size of Tag-Store for Skewed-Assoc-Randomized - Sets:16384, with Assoc:16 
+**** REAL SIMULATION ****
+3333333333: Event_86: system.cpu progress event, total committed:3146701, progress insts committed: 3146701, IPC: 0.314355
+6666666666: Event_86: system.cpu progress event, total committed:5859370, progress insts committed: 2712669, IPC: 0.270996
+9999999999: Event_86: system.cpu progress event, total committed:8571997, progress insts committed: 2712627, IPC: 0.270991
+13333333332: Event_86: system.cpu progress event, total committed:11284630, progress insts committed: 2712633, IPC: 0.270992
+16666666665: Event_86: system.cpu progress event, total committed:13997277, progress insts committed: 2712647, IPC: 0.270993
+19999999998: Event_86: system.cpu progress event, total committed:16709965, progress insts committed: 2712688, IPC: 0.270998
+23333333331: Event_86: system.cpu progress event, total committed:19422613, progress insts committed: 2712648, IPC: 0.270994
+26666666664: Event_86: system.cpu progress event, total committed:22135165, progress insts committed: 2712552, IPC: 0.270984
+29999999997: Event_86: system.cpu progress event, total committed:24847658, progress insts committed: 2712493, IPC: 0.270978
+33333333330: Event_86: system.cpu progress event, total committed:27560289, progress insts committed: 2712631, IPC: 0.270992
+36666666663: Event_86: system.cpu progress event, total committed:30272916, progress insts committed: 2712627, IPC: 0.270991
+39999999996: Event_86: system.cpu progress event, total committed:32985565, progress insts committed: 2712649, IPC: 0.270994
+43333333329: Event_86: system.cpu progress event, total committed:35698253, progress insts committed: 2712688, IPC: 0.270998
+46666666662: Event_86: system.cpu progress event, total committed:38410911, progress insts committed: 2712658, IPC: 0.270995
+49999999995: Event_86: system.cpu progress event, total committed:41123538, progress insts committed: 2712627, IPC: 0.270991
+53333333328: Event_86: system.cpu progress event, total committed:43835965, progress insts committed: 2712427, IPC: 0.270971
+56666666661: Event_86: system.cpu progress event, total committed:46548579, progress insts committed: 2712614, IPC: 00.27099
+59999999994: Event_86: system.cpu progress event, total committed:49261207, progress insts committed: 2712628, IPC: 0.270992
+63333333327: Event_86: system.cpu progress event, total committed:51973853, progress insts committed: 2712646, IPC: 0.270993
+66666666660: Event_86: system.cpu progress event, total committed:54686541, progress insts committed: 2712688, IPC: 0.270998
+69999999993: Event_86: system.cpu progress event, total committed:57399196, progress insts committed: 2712655, IPC: 0.270994
+73333333326: Event_86: system.cpu progress event, total committed:60111824, progress insts committed: 2712628, IPC: 0.270992
+76666666659: Event_86: system.cpu progress event, total committed:62824451, progress insts committed: 2712627, IPC: 0.270991
+79999999992: Event_86: system.cpu progress event, total committed:65536870, progress insts committed: 2712419, IPC: 0.270971
+83333333325: Event_86: system.cpu progress event, total committed:68249494, progress insts committed: 2712624, IPC: 0.270991
+86666666658: Event_86: system.cpu progress event, total committed:70962141, progress insts committed: 2712647, IPC: 0.270993
+89999999991: Event_86: system.cpu progress event, total committed:73674829, progress insts committed: 2712688, IPC: 0.270998
+93333333324: Event_86: system.cpu progress event, total committed:76387490, progress insts committed: 2712661, IPC: 0.270995
+96666666657: Event_86: system.cpu progress event, total committed:79100115, progress insts committed: 2712625, IPC: 0.270991
+99999999990: Event_86: system.cpu progress event, total committed:81812742, progress insts committed: 2712627, IPC: 0.270991
+103333333323: Event_86: system.cpu progress event, total committed:84525405, progress insts committed: 2712663, IPC: 0.270995
+106666666656: Event_86: system.cpu progress event, total committed:87237785, progress insts committed: 2712380, IPC: 0.270967
+109999999989: Event_86: system.cpu progress event, total committed:89950429, progress insts committed: 2712644, IPC: 0.270993
+113333333322: Event_86: system.cpu progress event, total committed:92663117, progress insts committed: 2712688, IPC: 0.270998
+116666666655: Event_86: system.cpu progress event, total committed:95375778, progress insts committed: 2712661, IPC: 0.270995
