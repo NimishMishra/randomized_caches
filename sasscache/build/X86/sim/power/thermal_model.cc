@@ -1,0 +1,1 @@
+/home/user1/mirage_runs/sasscache/src/sim/power/thermal_model.cc
