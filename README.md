@@ -2,9 +2,9 @@ This repository contains code for "Systematic Evaluation of Randomized Cache Des
 
 **Note**: The repository currently contains implementations of all cache designs considered in the paper as well as the in-house python simulator, and is self-sufficient for reproducibility of the results presented in the paper. For ease of use however, we are in the process of adding automated scripts to help with reproducibility.
 
-**Directory Structure**:
 
-- **llc_simulator**: 
+
+## LLC simulator
 
 In-house simulator to reproduce results of Section 5 related to covert channels. Each subdirectory within this directory corresponds to a specific randomized cache design. 
 Our results can be reproduced by running `python3 main.py` in each subdirectory, followed by executing the `plot.py` script.
@@ -60,11 +60,12 @@ Navigate to `/sasscache` and follow the sequence of steps:
 2. `./build/X86/gem5.opt ../../configs/example/se.py --cpu-type=TimingSimpleCPU --num-cpus=2 --cmd=xz --maxinsts=1000000000 --mem-size=8GB --mem-type=DDR4\_2400\_8x8 --caches --l2cache --l1d\_size=512B
  --l1i\_size=32kB --l2\_size=16MB --l1d\_assoc=8 --l1i\_assoc=8 --l2\_assoc=16` to run the SPEC2017 xz benchmark on Sasscache
 
-## Performance evaluation 
+## Performance evaluation and fingerprinting
 
 To reproduce our performance evaluation results, follow the commands above with two changes:
 
 -- Benchmark: Change the `--benchmark` to the particular SPEC2017 benchmark being tried.
+
 -- Replacement policy: Use the flag `--replacement\_policy` to the replacement policy of choice. We have the following policies supported: `RandomRP`, `TreePLRURP`, `WeightedLRURP`, `RRIPRP`, and `FIFORP` as valid values for this flag.
 
 ## AES 
