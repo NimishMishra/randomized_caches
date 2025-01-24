@@ -68,6 +68,8 @@ To reproduce our performance evaluation results, follow the commands above with 
 
 -- Replacement policy: Use the flag `--replacement\_policy` to the replacement policy of choice. We have the following policies supported: `RandomRP`, `TreePLRURP`, `WeightedLRURP`, `RRIPRP`, and `FIFORP` as valid values for this flag.
 
+**Note**: We do not provide the SPEC2017 source due to its licensing.
+
 ## AES 
 
 In each of the cache design subdirectories, we have provided a reference AES-TBOX implementation under `AES\_TBOX` with a CMakeList to help build it. It can be integrated into
