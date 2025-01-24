@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/src/arch/x86/isa/insts/general_purpose/compare_and_test/compare.py

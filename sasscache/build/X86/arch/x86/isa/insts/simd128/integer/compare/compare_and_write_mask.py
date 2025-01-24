@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/src/arch/x86/isa/insts/simd128/integer/compare/compare_and_write_mask.py

@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/ext/systemc/src/sysc/communication/SConscript.sc

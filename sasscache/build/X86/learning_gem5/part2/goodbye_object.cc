@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/src/learning_gem5/part2/goodbye_object.cc

@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/src/sim/sub_system.cc

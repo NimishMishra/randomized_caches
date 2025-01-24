@@ -1,1 +1,0 @@
-/home/user1/mirage_runs/sasscache/src/cpu/static_inst.hh
