@@ -154,6 +154,19 @@ def config_cache(options, system):
                 system.l2.cuckoo_on_conflict = True
             else:
                 fatal("Used a mirage_mode that is not supported")
+
+            if(options.replacement_policy is not None):
+                if(options.replacement_policy == "RandomRP"):
+                    system.l2.replacement_policy = RandomRP()
+                elif(options.replacement_policy == "TreePLRURP"):
+                    system.l2.replacement_policy = TreePLRURP()
+                elif(options.replacement_policy == "WeightedLRURP"):
+                    system.l2.replacement_policy = WeightedLRURP()
+                elif(options.replacement_policy == "RRIPRP"):
+                    system.l2.replacement_policy = RRIPRP()
+                elif(options.replacement_policy == "FIFORP"):
+                    system.l2.replacement_policy = FIFORP()
+
             if (str(system.l2.vwayCache) == "True"):
                 assert str(system.l2.randomizedIndexing) == "True"
                 system.l2.TDR = options.l2_TDR #Set Tag-Data ratio for Vway

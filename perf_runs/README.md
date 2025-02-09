@@ -14,7 +14,7 @@ Use one of the run-scripts to engage a specific benchmark with the respective ca
 
 Ex: `bash run_mirage_benchmark.sh blender` to run blender on MIRAGE.
 
-List of supported benchmarks: `blender`, `cactu`, `fotonik`, `gcc`, `imagick`, `lbm`, `leela`, `mcf`, `nab`, `namd`, `omnetpp`, `perlbench`, `povray`, `wrf`, `x264`, `xalancbmk`, `xz`
+List of supported benchmarks: `blender`, `cactu`, `fotonik`, `gcc`, `imagick`, `lbm`, `leela`, `mcf`, `nab`, `namd`, `omnetpp`, `perlbench`, `povray`, `x264`, `xalancbmk`, `xz`
 
 Additionally, the second (optional) argument to these scripts helps specify a replacement policy. List of supported policies: `RandomRP`, `TreePLRURP`, `WeightedLRURP`, `RRIPRP`, `FIFORP`.
 
