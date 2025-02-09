@@ -74,7 +74,7 @@ def parse_options():
         help="Show the readme")
 
     # Options for configuring the base simulator
-    option('-d', "--outdir", metavar="DIR", default="./sass/m5out_" + random.randint(0, 100),
+    option('-d', "--outdir", metavar="DIR", default="m5out",
         help="Set the output directory to DIR [Default: %default]")
     option('-r', "--redirect-stdout", action="store_true", default=False,
         help="Redirect stdout (& stderr, without -e) to file")
