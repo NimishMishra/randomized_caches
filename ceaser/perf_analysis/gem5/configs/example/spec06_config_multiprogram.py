@@ -148,13 +148,14 @@ numProcesses = options.num_cpus
 
 
 spurious_proc = Process(pid=99)
-spurious_proc.executable = "/home/user1/mirage_runs/benchmark_wrappers/spurious_occupancy" 
+spurious_proc.executable = os.environ["BASE_DIR"] + "/randomized_cache_hello_world/spurious_occupancy" 
 spurious_proc.cmd = [spurious_proc.executable]
 multiprocesses.append(spurious_proc)
 
 
-proc = user_defined_benchmarks.create_proc(options.benchmark,0)
-multiprocesses.append(proc)
+if(options.benchmark):
+    proc = user_defined_benchmarks.create_proc(options.benchmark,0)
+    multiprocesses.append(proc)
 
 #if options.bench:
 #    apps = options.bench.split("-")

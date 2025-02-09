@@ -3,7 +3,7 @@ from m5.objects import *
 import os
 
 ## Paths
-SPEC_PATH       = os.environ['SPEC_PATH']
+SPEC_PATH       = os.environ["SPEC_PATH"]
 RUN_DIR_prefix  = '/benchspec/CPU2006/'
 RUN_DIR_postfix = '/run/run_base_ref_amd64-m64-gcc41-nn.0000'
 x86_suffix = '_base.amd64-m64-gcc41-nn'
@@ -14,57 +14,57 @@ x86_suffix = '_base.amd64-m64-gcc41-nn'
 
 #### SPEC 2017 specific benchmarks
 deepsjeng = Process()
-deepsjeng.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_perfcount-m64.0000/deepsjeng_r_base.perfcount-m64"
-deepsjeng.cmd = [deepsjeng.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_perfcount-m64.0000/deepsjeng_r_base.perfcount-m64"]
+deepsjeng.executable = SPEC_PATH + "/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_perfcount-m64.0000/deepsjeng_r_base.perfcount-m64"
+deepsjeng.cmd = [deepsjeng.executable] + [SPEC_PATH + "/benchspec/CPU/531.deepsjeng_r/run/run_base_refrate_perfcount-m64.0000/deepsjeng_r_base.perfcount-m64"]
 deepsjeng.cwd = SPEC_PATH + "531.deepsjeng"
 
 cactu = Process()
-cactu.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/507.cactuBSSN_r/run/run_base_refrate_perfcount-m64.0000/cactusBSSN_r_base.perfcount-m64"
-cactu.cmd = [cactu.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/507.cactuBSSN_r/run/run_base_refrate_perfcount-m64.0000/spec_ref.par"]
+cactu.executable = SPEC_PATH + "/benchspec/CPU/507.cactuBSSN_r/run/run_base_refrate_perfcount-m64.0000/cactusBSSN_r_base.perfcount-m64"
+cactu.cmd = [cactu.executable] + [SPEC_PATH + "/benchspec/CPU/507.cactuBSSN_r/run/run_base_refrate_perfcount-m64.0000/spec_ref.par"]
 cactu.cwd = SPEC_PATH + "507.cactu"
 
 x264 = Process()
-x264.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/x264_r_base.perfcount-m64" 
-x264.cmd = [x264.executable] + ["--pass", "1", "--stats", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/x264_stats.log", "--bitrate", "1000",
-        "--frames", "1000", "-o", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/BuckBunny_New.264", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/BuckBunny.yuv", "1280x720"]
+x264.executable = SPEC_PATH + "/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/x264_r_base.perfcount-m64" 
+x264.cmd = [x264.executable] + ["--pass", "1", "--stats", SPEC_PATH + "/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/x264_stats.log", "--bitrate", "1000",
+        "--frames", "1000", "-o", SPEC_PATH + "/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/BuckBunny_New.264", SPEC_PATH + "/benchspec/CPU/525.x264_r/run/run_base_refrate_perfcount-m64.0000/BuckBunny.yuv", "1280x720"]
 x264.cwd = SPEC_PATH + "525.x264"
 
 blender = Process()
-blender.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/blender_r_base.perfcount-m64" 
-blender.cmd = [blender.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/sh3_no_char.blend", "--render-output", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/sh3_no_char_", "--threads", "1", "-b", "-F", "RAWTGA", "-s", "849", "-e", "849", "-a"]
+blender.executable = SPEC_PATH + "/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/blender_r_base.perfcount-m64" 
+blender.cmd = [blender.executable] + [SPEC_PATH + "/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/sh3_no_char.blend", "--render-output", SPEC_PATH + "/benchspec/CPU/526.blender_r/run/run_base_refrate_perfcount-m64.0000/sh3_no_char_", "--threads", "1", "-b", "-F", "RAWTGA", "-s", "849", "-e", "849", "-a"]
 blender.cwd = SPEC_PATH + "526.blender"
 
 imagick = Process()
-imagick.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/imagick_r_base.perfcount-m64"
-imagick.cmd = [imagick.executable] + ["-limit", "disk", "0", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/refrate_input.tga", "-edge", 
-        "41", "-resample", "181%", "-emboss", "31", "-colorspace", "YUV", "-mean-shift", "19x19+15%", "-resize", "30%", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/refrate_output.tga"]
+imagick.executable = SPEC_PATH + "/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/imagick_r_base.perfcount-m64"
+imagick.cmd = [imagick.executable] + ["-limit", "disk", "0", SPEC_PATH + "/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/refrate_input.tga", "-edge", 
+        "41", "-resample", "181%", "-emboss", "31", "-colorspace", "YUV", "-mean-shift", "19x19+15%", "-resize", "30%", SPEC_PATH + "/benchspec/CPU/538.imagick_r/run/run_base_refrate_perfcount-m64.0000/refrate_output.tga"]
 imagick.cwd = SPEC_PATH + "538.imagick"
 
 leela = Process()
-leela.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/541.leela_r/run/run_base_refrate_perfcount-m64.0000/leela_r_base.perfcount-m64"
-leela.cmd = [leela.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/541.leela_r/run/run_base_refrate_perfcount-m64.0000/ref.sgf"]
+leela.executable = SPEC_PATH + "/benchspec/CPU/541.leela_r/run/run_base_refrate_perfcount-m64.0000/leela_r_base.perfcount-m64"
+leela.cmd = [leela.executable] + [SPEC_PATH + "/benchspec/CPU/541.leela_r/run/run_base_refrate_perfcount-m64.0000/ref.sgf"]
 leela.cwd = SPEC_PATH + "541.leela"
 
 nab = Process()
-nab.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/544.nab_r/run/run_base_refrate_perfcount-m64.0000/nab_r_base.perfcount-m64"
-nab.cmd = [nab.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/544.nab_r/run/run_base_refrate_perfcount-m64.0000/1am0", "1122214447", "122"]
+nab.executable = SPEC_PATH + "/benchspec/CPU/544.nab_r/run/run_base_refrate_perfcount-m64.0000/nab_r_base.perfcount-m64"
+nab.cmd = [nab.executable] + [SPEC_PATH + "/benchspec/CPU/544.nab_r/run/run_base_refrate_perfcount-m64.0000/1am0", "1122214447", "122"]
 nab.cwd = SPEC_PATH + "544.nab"
 
 fotonik = Process()
-fotonik.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/549.fotonik3d_r/run/run_base_refrate_perfcount-m64.0000/fotonik3d_r_base.perfcount-m64"
+fotonik.executable = SPEC_PATH + "/benchspec/CPU/549.fotonik3d_r/run/run_base_refrate_perfcount-m64.0000/fotonik3d_r_base.perfcount-m64"
 fotonik.cmd = [fotonik.executable]
 fotonik.cwd = SPEC_PATH + "549.fotonik"
 
 xz = Process()
-xz.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/557.xz_r/run/run_base_refrate_perfcount-m64.0000/xz_r_base.perfcount-m64"
-xz.cmd = [xz.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/557.xz_r/run/run_base_refrate_perfcount-m64.0000/cld.tar.xz", "160", "19cf30ae51eddcbefda78dd06014b4b96281456e078ca7c13e1c0c9e6aaea8dff3efb4ad6b0456697718cede6bd5454852652806a657bb56e07d61128434b474", "59796407", "61004416", "6"]
+xz.executable = SPEC_PATH + "/benchspec/CPU/557.xz_r/run/run_base_refrate_perfcount-m64.0000/xz_r_base.perfcount-m64"
+xz.cmd = [xz.executable] + [SPEC_PATH + "/benchspec/CPU/557.xz_r/run/run_base_refrate_perfcount-m64.0000/cld.tar.xz", "160", "19cf30ae51eddcbefda78dd06014b4b96281456e078ca7c13e1c0c9e6aaea8dff3efb4ad6b0456697718cede6bd5454852652806a657bb56e07d61128434b474", "59796407", "61004416", "6"]
 xz.cwd = SPEC_PATH + "557.xz"
 
 #########################
 #400.perlbench
 perlbench = Process() 
-perlbench.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/500.perlbench_r/build/build_base_perfcount-m64.0000/perlbench_r" 
-perlbench.cmd = [perlbench.executable] + ['-I/home/user1/mirage_runs/SPEC2017/benchspec/CPU/500.perlbench_r/run/run_base_refrate_perfcount-m64.0000/lib', '/home/user1/mirage_runs/SPEC2017/benchspec/CPU/500.perlbench_r/run/run_base_refrate_perfcount-m64.0000/checkspam.pl', '2500', '5', '25', '11', '150', '1', '1', '1', '1']
+perlbench.executable = SPEC_PATH + "/benchspec/CPU/500.perlbench_r/build/build_base_perfcount-m64.0000/perlbench_r" 
+perlbench.cmd = [perlbench.executable] + ['-I' + SPEC_PATH + '/benchspec/CPU/500.perlbench_r/run/run_base_refrate_perfcount-m64.0000/lib', SPEC_PATH + '/benchspec/CPU/500.perlbench_r/run/run_base_refrate_perfcount-m64.0000/checkspam.pl', '2500', '5', '25', '11', '150', '1', '1', '1', '1']
 perlbench.cwd = SPEC_PATH + RUN_DIR_prefix + '500.perlbench' + RUN_DIR_postfix 
 
 #401.bzip2
@@ -84,11 +84,11 @@ bzip2.cwd = SPEC_PATH + RUN_DIR_prefix + "401.bzip2" + RUN_DIR_postfix
 
 #403.gcc
 gcc = Process() # Update June 7, 2017: This used to be LiveProcess()
-gcc.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/502.gcc_r/build/build_base_perfcount-m64.0000/cpugcc_r" 
+gcc.executable = SPEC_PATH + "/benchspec/CPU/502.gcc_r/build/build_base_perfcount-m64.0000/cpugcc_r" 
 # TEST CMDS
 #gcc.cmd = [gcc.executable] + ['cccp.i', '-o', 'cccp.s']
 # REF CMDS
-gcc.cmd = [gcc.executable] + ['/home/user1/mirage_runs/SPEC2017/benchspec/CPU/502.gcc_r/build/build_peak_perfcount-m64.0000/200.c', '-o', '/home/user1/mirage_runs/SPEC2017/benchspec/CPU/502.gcc_r/build/build_peak_perfcount-m64.0000/200.s']
+gcc.cmd = [gcc.executable] + [SPEC_PATH + '/benchspec/CPU/502.gcc_r/build/build_peak_perfcount-m64.0000/200.c', '-o', SPEC_PATH + '/benchspec/CPU/502.gcc_r/build/build_peak_perfcount-m64.0000/200.s']
 #gcc.cmd = [gcc.executable] + ['200.i', '-o', '200.s']
 #gcc.cmd = [gcc.executable] + ['c-typeck.i', '-o', 'c-typeck.s']
 #gcc.cmd = [gcc.executable] + ['cp-decl.i', '-o', 'cp-decl.s']
@@ -128,11 +128,11 @@ gamess.cwd = SPEC_PATH + RUN_DIR_prefix + "416.gamess" + RUN_DIR_postfix
 
 #505.mcf
 mcf = Process() # Update June 7, 2017: This used to be LiveProcess()
-mcf.executable =  "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/505.mcf_r/build/build_base_perfcount-m64.0000/mcf_r"
+mcf.executable =  SPEC_PATH + "/benchspec/CPU/505.mcf_r/build/build_base_perfcount-m64.0000/mcf_r"
 # TEST CMDS
 #mcf.cmd = [mcf.executable] + ['inp.in']
 # REF CMDS
-mcf.cmd = [mcf.executable] + ['/home/user1/mirage_runs/SPEC2017/benchspec/CPU/505.mcf_r/data/train/input/inp.in']
+mcf.cmd = [mcf.executable] + [SPEC_PATH + '/benchspec/CPU/505.mcf_r/data/train/input/inp.in']
 #mcf.output = out_dir + 'mcf.out'
 mcf.cwd = SPEC_PATH + RUN_DIR_prefix + "505.mcf" + RUN_DIR_postfix
 
@@ -192,11 +192,11 @@ leslie3d.cwd = SPEC_PATH + RUN_DIR_prefix + "437.leslie3d" + RUN_DIR_postfix
 
 #508.namd
 namd = Process() # Update June 7, 2017: This used to be LiveProcess()
-namd.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/508.namd_r/build/build_base_perfcount-m64.0000/namd_r" 
+namd.executable = SPEC_PATH + "/benchspec/CPU/508.namd_r/build/build_base_perfcount-m64.0000/namd_r" 
 # TEST CMDS
 #namd.cmd = [namd.executable] + ['--input', 'namd.input', '--output', 'namd.out', '--iterations', '1']
 # REF CMDS
-namd.cmd = [namd.executable] + ['--input', '/home/user1/mirage_runs/SPEC2017/benchspec/CPU/508.namd_r/data/all/input/apoa1.input', '--output', '/home/user1/mirage_runs/SPEC2017/benchspec/CPU/508.namd_r/data/all/input/namd.out', '--iterations', '38']
+namd.cmd = [namd.executable] + ['--input', SPEC_PATH + '/benchspec/CPU/508.namd_r/data/all/input/apoa1.input', '--output', SPEC_PATH + '/benchspec/CPU/508.namd_r/data/all/input/namd.out', '--iterations', '38']
 #namd.output = out_dir + 'namd.out'
 namd.cwd = SPEC_PATH + RUN_DIR_prefix + "508.namd"
 
@@ -245,11 +245,11 @@ soplex.cwd = SPEC_PATH + RUN_DIR_prefix + "450.soplex" + RUN_DIR_postfix
 
 #511.povray
 povray = Process() # Update June 7, 2017: This used to be LiveProcess()
-povray.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/511.povray_r/build/build_base_perfcount-m64.0000/povray_r" 
+povray.executable = SPEC_PATH + "/benchspec/CPU/511.povray_r/build/build_base_perfcount-m64.0000/povray_r" 
 # TEST CMDS
 #povray.cmd = [povray.executable] + ['SPEC-benchmark-test.ini']
 # REF CMDS
-povray.cmd = [povray.executable] + ["/home/user1/mirage_runs/SPEC2017/benchspec/CPU/511.povray_r/data/refrate/input/SPEC-benchmark-ref.ini"]
+povray.cmd = [povray.executable] + [SPEC_PATH + "/benchspec/CPU/511.povray_r/data/refrate/input/SPEC-benchmark-ref.ini"]
 #povray.output = out_dir + 'povray.out'
 povray.cwd = SPEC_PATH + RUN_DIR_prefix + "511.povray" + RUN_DIR_postfix
 
@@ -328,17 +328,17 @@ tonto.cwd = SPEC_PATH + RUN_DIR_prefix + "465.tonto" + RUN_DIR_postfix
 
 #519.lbm
 lbm = Process() # Update June 7, 2017: This used to be LiveProcess()
-lbm.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/519.lbm_r/build/build_base_perfcount-m64.0000/lbm_r"
+lbm.executable = SPEC_PATH + "/benchspec/CPU/519.lbm_r/build/build_base_perfcount-m64.0000/lbm_r"
 # TEST CMDS
 #lbm.cmd = [lbm.executable] + ['20', 'reference.dat', '0', '1', '100_100_130_cf_a.of']
 # REF CMDS
-lbm.cmd = [lbm.executable] + ['300', "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/519.lbm_r/data/refrate/input/lbm.in", '0', '0', "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/519.lbm_r/data/refrate/input/100_100_130_ldc.of"]
+lbm.cmd = [lbm.executable] + ['300', SPEC_PATH + "/benchspec/CPU/519.lbm_r/data/refrate/input/lbm.in", '0', '0', SPEC_PATH + "/benchspec/CPU/519.lbm_r/data/refrate/input/100_100_130_ldc.of"]
 #lbm.output = out_dir + 'lbm.out'
 lbm.cwd = SPEC_PATH + RUN_DIR_prefix + "519.lbm" + RUN_DIR_postfix
 
 #520.omnetpp
 omnetpp = Process() # Update June 7, 2017: This used to be LiveProcess()
-omnetpp.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_perfcount-m64.0000/omnetpp_r_base.perfcount-m64"
+omnetpp.executable = SPEC_PATH + "/benchspec/CPU/520.omnetpp_r/run/run_base_refrate_perfcount-m64.0000/omnetpp_r_base.perfcount-m64"
 # TEST CMDS
 #omnetpp.cmd = [omnetpp.executable] + ['omnetpp.ini']
 # REF CMDS
@@ -358,7 +358,7 @@ astar.cwd = SPEC_PATH + RUN_DIR_prefix + "473.astar" + RUN_DIR_postfix
 
 #521.wrf
 wrf = Process() # Update June 7, 2017: This used to be LiveProcess()
-wrf.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/521.wrf_r/run/run_base_refrate_perfcount-m64.0000/wrf_r"
+wrf.executable = SPEC_PATH + "/benchspec/CPU/521.wrf_r/run/run_base_refrate_perfcount-m64.0000/wrf_r"
 wrf.cmd = [wrf.executable]
 wrf.cwd = SPEC_PATH + RUN_DIR_prefix + "521.wrf" + RUN_DIR_postfix
 
@@ -375,8 +375,8 @@ sphinx3.cwd = SPEC_PATH + RUN_DIR_prefix + "482.sphinx3" + RUN_DIR_postfix
 #523.xalancbmk
 ######## NOT WORKING ###########
 xalancbmk = Process() # Update June 7, 2017: This used to be LiveProcess()
-xalancbmk.executable = "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/cpuxalan_r_base.perfcount-m64"
-xalancbmk.cmd = [xalancbmk.executable] + ['-v',"/home/user1/mirage_runs/SPEC2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/t5.xml", "/home/user1/mirage_runs/SPEC2017/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/xalanc.xsl"]
+xalancbmk.executable = SPEC_PATH + "/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/cpuxalan_r_base.perfcount-m64"
+xalancbmk.cmd = [xalancbmk.executable] + ['-v', SPEC_PATH + "/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/t5.xml", SPEC_PATH + "/benchspec/CPU/523.xalancbmk_r/run/run_base_refrate_perfcount-m64.0000/xalanc.xsl"]
 xalancbmk.cwd = SPEC_PATH + RUN_DIR_prefix + "523.xalancbmk" + RUN_DIR_postfix
 
 #998.specrand
