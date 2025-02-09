@@ -148,43 +148,13 @@ numProcesses = options.num_cpus
 
 
 spurious_proc = Process(pid=99)
-spurious_proc.executable = "/home/user1/mirage_runs/benchmark_wrappers/spurious_occupancy" 
+spurious_proc.executable = os.environ["BASE_DIR"] + "/randomized_cache_hello_world/spurious_occupancy"
 spurious_proc.cmd = [spurious_proc.executable]
 multiprocesses.append(spurious_proc)
 
-
-proc = user_defined_benchmarks.create_proc(options.benchmark,0)
-multiprocesses.append(proc)
-
-#if options.bench:
-#    apps = options.bench.split("-")
-#    if len(apps) != options.num_cpus:
-#        print("number of benchmarks not equal to set num_cpus!")
-#        sys.exit(1)
-#
-#    for app in apps:
-#        try:
-#            if buildEnv['TARGET_ISA'] == 'alpha':
-#                exec("workload = %s('alpha', 'tru64', '%s')" % (
-#                        app, options.spec_input))
-#            elif buildEnv['TARGET_ISA'] == 'arm':
-#                exec("workload = %s('arm_%s', 'linux', '%s')" % (
-#                        app, options.arm_iset, options.spec_input))
-#            else:
-#                exec("workload = %s(buildEnv['TARGET_ISA', 'linux', '%s')" % (
-#                        app, options.spec_input))
-#            multiprocesses.append(workload.makeProcess())
-#        except:
-#            print("Unable to find workload for %s: %s" %
-#                  (buildEnv['TARGET_ISA'], app),
-#                  file=sys.stderr)
-#            sys.exit(1)
-#elif options.cmd:
-#    multiprocesses, numThreads = get_processes(options)
-#else:
-#    print("No workload specified. Exiting!\n", file=sys.stderr)
-#    sys.exit(1)
-
+if(options.benchmark):
+    proc = user_defined_benchmarks.create_proc(options.benchmark,0)
+    multiprocesses.append(proc)
 
 (CPUClass, test_mem_mode, FutureClass) = Simulation.setCPUClass(options)
 CPUClass.numThreads = numThreads
