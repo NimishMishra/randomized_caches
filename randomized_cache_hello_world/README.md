@@ -4,6 +4,8 @@ This run is intended to be a test run of the randomized cache designs in this re
 
 Run through `bash setup.sh`. We have tested the following on Ubuntu. Please use an appropriate package manager (like yum) for your system (say Redhat). This scripts does the following:
 
+Pre-requisite: `export BASE_DIR=...`. Point this to the top-level directory of this repository. 
+
 1. Setup python2.7
 
 2. Setup virtualenv
@@ -19,8 +21,3 @@ Run through `bash setup.sh`. We have tested the following on Ubuntu. Please use 
 7. Build gem5 binaries for Sasscache.  
 
 This setup needs to be done only once for all experiments in this repository.
-
-
-
-
-
