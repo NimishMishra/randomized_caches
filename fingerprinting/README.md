@@ -24,7 +24,11 @@ The scripts `ceaser.py`, `ceaser_s.py`, `mirage.py`, `sass.py`, and `scatter.py`
 Current script output:
 
 `python3 ceaser.py`: (CEASER) Accuracy: 0.8196392785571143
+
 `python3 ceaser_s.py`: (CEASER-S) Accuracy: 0.746
+
 `python3 mirage.py`: (MIRAGE) Accuracy: 0.8617234468937875
+
 `python3 scatter.py` : (Scatter-cache) Accuracy: 0.6713426853707415
+
 `python3 sass.py`: (Sass-cache) Accuracy: 0.1342685370741483
