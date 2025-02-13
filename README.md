@@ -1,4 +1,4 @@
-# This repository contains code for "Systematic Evaluation of Randomized Cache Designs against Cache Occupancy", to appear at USENIX Security 2025.
+### This repository contains code for "Systematic Evaluation of Randomized Cache Designs against Cache Occupancy", to appear at USENIX Security 2025.
 
 ## Randomized Cache designs
 
