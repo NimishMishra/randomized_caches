@@ -1,15 +1,5 @@
 This repository contains code for "Systematic Evaluation of Randomized Cache Designs against Cache Occupancy", to appear at USENIX Security 2025.
 
-**Note**: The repository currently contains implementations of all cache designs considered in the paper as well as the in-house python simulator, and is self-sufficient for reproducibility of the results presented in the paper. For ease of use however, we are in the process of adding automated scripts to help with reproducibility.
-
-
-
-## LLC simulator
-
-In-house simulator to reproduce results of Section 5 related to covert channels. Each subdirectory within this directory corresponds to a specific randomized cache design. 
-Our results can be reproduced by running `python3 main.py` in each subdirectory, followed by executing the `plot.py` script.
-
-
 ## Randomized Cache designs
 
 We also open-source all cache designs evaluated in the paper
@@ -59,17 +49,21 @@ Navigate to `/sasscache` and follow the sequence of steps:
 1. `scons ./build/X86/gem5.opt` to build the sasscache implementation
 2. `./build/X86/gem5.opt ../../configs/example/se.py --cpu-type=TimingSimpleCPU --num-cpus=2 --cmd=xz --maxinsts=1000000000 --mem-size=8GB --mem-type=DDR4_2400_8x8 --caches --l2cache --l1d_size=512B --l1i_size=32kB --l2_size=16MB --l1d_assoc=8 --l1i_assoc=8 --l2_assoc=16` to run the SPEC2017 xz benchmark on Sasscache
 
-## Performance evaluation and fingerprinting
+## LLC simulator
 
-To reproduce our performance evaluation results, follow the commands above with two changes:
+In-house simulator to reproduce results of Section 5 related to covert channels. Each subdirectory within this directory corresponds to a specific randomized cache design. 
+Our results can be reproduced by running `python3 main.py` in each subdirectory, followed by executing the `plot.py` script.
 
--- Benchmark: Change the `--benchmark` to the particular SPEC2017 benchmark being tried.
+## Performance evaluation 
 
--- Replacement policy: Use the flag `--replacement_policy` to the replacement policy of choice. We have the following policies supported: `RandomRP`, `TreePLRURP`, `WeightedLRURP`, `RRIPRP`, and `FIFORP` as valid values for this flag.
+Refer `perf_runs/`.
+
+**Note**: We do not provide the SPEC2017 source due to its licensing.
+
+## Process fingerprinting
+
+Refer `fingerprinting/`.
 
 **Note**: We do not provide the SPEC2017 source due to its licensing.
 
 ## AES 
-
-In each of the cache design subdirectories, we have provided a reference AES-TBOX implementation under `AES\_TBOX` with a CMakeList to help build it. It can be integrated into
-any of the cache designs by the `--benchmark` flag
