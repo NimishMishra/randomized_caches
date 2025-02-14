@@ -102,17 +102,12 @@ class Simulator(object):
         num_index_bits = int(math.log2(num_sets))
         
         num_tag_bits = num_addr_bits - num_index_bits - num_offset_bits
-
-        print(num_blocks, num_sets, num_blocks_per_set, num_blocks_per_set)
                 
         refs = self.get_addr_refs(word_addrs, num_addr_bits, num_offset_bits, num_index_bits, num_tag_bits, num_partitions, ways_per_partition)  
     
         cache = Cache(num_sets = num_sets, num_index_bits = num_index_bits, num_partitions = num_partitions, ways_per_partition = ways_per_partition)
         
         cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs)
-
-        print("... Cache is filled by attacker addresses .. [need to optimise this] ...")
-
 
         victim_words = []
         base_address = 1000000
@@ -122,10 +117,6 @@ class Simulator(object):
 
         cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs_victim)
 
-
-        print("... Probing Phase: Re accessing all attacker addresses ...")
-
-
         refs = self.get_addr_refs(word_addrs, num_addr_bits, num_offset_bits, num_index_bits, num_tag_bits, num_partitions, ways_per_partition)        
         cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs)
 
@@ -133,6 +124,4 @@ class Simulator(object):
         timing_vals = self.emulate_timing(refs)
 
         return timing_vals
- 
-        
         
