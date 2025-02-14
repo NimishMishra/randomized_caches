@@ -104,38 +104,51 @@ def main(address, num_of_victim_access):
     address_misses = 0
     for index, item in enumerate(timing_list):
         if (item == 600):
-#            print(index, item)
             address_misses += 1
 
     print(address_misses)
+    return address_misses
 
 
 if __name__ == '__main__':
-#    random.seed(7)
-    num = []
     base_address = 10000000
 
-    for i in range(10000):
-        num.append(10000000 + (10000 * i))
-    
-    # for i in range(100000):
-    #     num.append(random.randint(0, 10000000))
+    num_for_0 = []; num_for_1 = []
 
-    # with open('address_list.txt', 'w') as filehandle:
-    #     filehandle.writelines(str(num))
-    
-    # outfile = 'indices_list_simulator.txt'
-    # if os.path.exists(outfile):
-    #     os.remove(outfile)
-    
-    # with open('address_list.txt', 'r') as f:
-    #     file = f.read()
 
-#    tup = literal_eval(file)
+    file_0 = f"outfile_v100_for_0.txt"
+    file_1 = f"outfile_v100_for_1.txt"
+    num_of_receiver_access = [1000, 2000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000]
 
-    # for i in range(len(tup)):
-    #     num.append(tup[i])
-    num_of_victim_access = 2000
-    main(num, num_of_victim_access)
+    sender_access_for_0 = 1000
+    sender_access_for_1 = 2000
+
+    for i in range(sender_access_for_0):
+        num_for_0.append(base_address + (1000 * i))
+
+    with open(file_0, "w") as f:
+        for i in range(len(num_of_receiver_access)):
+            print(num_of_receiver_access[i])
+            for j in range(100):
+                no_of_misses = main(num_for_0, num_of_receiver_access[i])
+                write_list = [num_of_receiver_access[i], no_of_misses]
+                f.write(str(write_list))
+                f.write("\n")
+                f.flush()
     print("")
-    
+
+    for i in range(sender_access_for_1):
+        num_for_1.append(base_address + (1000 * i))
+
+    with open(file_1, "w") as f:
+        for i in range(len(num_of_receiver_access)):
+            print(num_of_receiver_access[i])
+            for j in range(100):
+                no_of_misses = main(num_for_1, num_of_receiver_access[i])
+                write_list = [num_of_receiver_access[i], no_of_misses]
+                f.write(str(write_list))
+                f.write("\n")
+                f.flush()
+    print("")
+
+    print("Baseline Cache simulation Done!!!")

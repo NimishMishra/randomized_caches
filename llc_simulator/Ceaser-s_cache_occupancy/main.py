@@ -10,9 +10,7 @@ import argparse
 from simulator import Simulator
 from collections import OrderedDict
 import configparser 
-from ast import literal_eval
 import random
-import os
 
 def parse_cli_args():
 
@@ -79,14 +77,12 @@ class Configs(dict):
                self.num_partitions = int(configs[params])
            if params == 'num-addr-bits':
                self.num_addr_bits = int(configs[params])
-           if params == 'num-additional-tags':
-               self.num_additional_tags = int(configs[params])           
            if params == 'replacement-policy':
                self.replacement_policy = configs[params]
 
             
 
-def main(address, num_of_victim_access):  
+def main(address, num_of_victim_access):
     parser = configparser.ConfigParser()
     parser.read('config.ini')
     
@@ -94,36 +90,35 @@ def main(address, num_of_victim_access):
     cli_args = Configs(parser[sections[0]])
     vars(cli_args)['word_addrs'] = address    
     
-
     sim = Simulator()
     timing_vals = OrderedDict()
     timing_vals = sim.run_simulation(**vars(cli_args), num_of_victim_access = num_of_victim_access)
 
-    timing_list  = []
+    timing_list = []
     for word, timing in timing_vals.items():
         timing_list.append(timing)
-
+    
     address_misses = 0
     for index, item in enumerate(timing_list):
         if (item == 600):
-    #        print(index, item)
             address_misses += 1
     print(address_misses)
     return(address_misses)
+    
 
 
 if __name__ == '__main__':
-    base_address = 10000000
+	base_address = 10000000
 
-    num_for_0 = []; num_for_1 = []
+	num_for_0 = []; num_for_1 = []
 
 
-    file_0 = f"outfile_v100_for_0.txt"
-    file_1 = f"outfile_v100_for_1.txt"
-    num_of_receiver_access = [1000, 2000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000]
+	file_0 = f"outfile_v100_for_0.txt"
+	file_1 = f"outfile_v100_for_1.txt"
+	num_of_receiver_access = [1000, 2000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000]
 
-    sender_access_for_0 = 1000
-    sender_access_for_1 = 2000
+	sender_access_for_0 = 1000
+	sender_access_for_1 = 2000
 
     for i in range(sender_access_for_0):
         num_for_0.append(base_address + (1000 * i))
@@ -153,4 +148,5 @@ if __name__ == '__main__':
                 f.flush()
     print("")
 
-    print("Mirage simulation Done!!!")
+	print("Ceaser-S simulation Done!!!")
+    

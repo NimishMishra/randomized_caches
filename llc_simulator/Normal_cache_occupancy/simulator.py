@@ -108,42 +108,19 @@ class Simulator(object):
     
         cache = Cache(num_sets = num_sets, num_index_bits = num_index_bits, num_partitions = num_partitions, ways_per_partition = ways_per_partition)
 
-        print("")
-        print("... cache is initialized - tag store holds some valid and some invalid tags; data store filled with all valid and remaining invalid")
-        print("")
-
-#        refs = self.set_index(num_partitions, num_index_bits, refs)
         cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs)
-                
-        # refs = self.set_index(num_partitions, num_index_bits, refs)
-
-        # for ref in refs:
-        #     print(ref)
-        # print ("Valid Tags : " + str(cache.count_valid_tags()) + ", Cache Capacity : " + str(num_data_blocks))
-
-        print("... Cache is filled by attacker addresses .. [need to optimise this] ...")
 
 
         victim_words = []
         base_address = 1000000
         for i in range(num_of_victim_access):
             victim_words.append(base_address + (1000 * i))
-#            victim_words.append(random.randint(0, 10000000))
         refs_victim = self.get_addr_refs(victim_words, num_addr_bits, num_offset_bits, num_index_bits, num_tag_bits, num_partitions, ways_per_partition) 
 
-#        refs_victim = self.set_index(num_partitions, num_index_bits, refs_victim)
-        cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs_victim)
-
-    #    print ("Valid Tags : " + str(cache.count_valid_tags()) + ", Cache Capacity : " + str(num_data_blocks))
-
-        print("... Probing Phase: Re accessing all acttacker addresses ...")
-      
+        cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs_victim)   
         
         refs = self.get_addr_refs(word_addrs, num_addr_bits, num_offset_bits, num_index_bits, num_tag_bits, num_partitions, ways_per_partition)  
-#        refs = self.set_index(num_partitions, num_index_bits, refs)      
         cache.read_refs(num_blocks_per_set, num_words_per_block, num_partitions, replacement_policy, refs)
-
-    #    print ("Valid Tags : " + str(cache.count_valid_tags()) + ", Cache Capacity : " + str(num_data_blocks))
 
         timing_vals = self.emulate_timing(refs)
 

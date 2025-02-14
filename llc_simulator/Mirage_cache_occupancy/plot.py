@@ -54,7 +54,7 @@ file_list_15k = list(map(literal_eval, list(filter(None, list(map(lambda each:ea
 
 
 sender_accesses = []; num_of_misses = []
-for item in file_list_5k:
+for item in file_list_1k:
     sender_accesses.append(item[0])
     num_of_misses.append(item[1])
     
@@ -96,15 +96,15 @@ plt.scatter([], [], color='black', marker='x', s=20, label='Outlier')
 plt.legend(loc='upper left')
 
 # Customize the plot
-plt.title("Receiver making 5,000 accesses", fontsize=10)
-plt.xlabel("No. of accesses from sender", fontsize=10)
-plt.ylabel("No. of misses observed by receiver", fontsize=10)
+plt.title("Receiver making 1,000 accesses")
+plt.xlabel("No. of accesses from sender")
+plt.ylabel("No. of misses observed by receiver")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 
 plt.tight_layout()
 
 # Save the plot as a PDF with high DPI
-plt.savefig("mirage_5k_access.pdf", dpi=1200, format='pdf')
+plt.savefig("mirage_1k_access.pdf", dpi=1200, format='pdf', bbox_inchex='tight')
 
 # Display the plot
 plt.show()
